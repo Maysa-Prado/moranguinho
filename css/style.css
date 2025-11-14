@@ -1,0 +1,275 @@
+:root {
+    --cor-primaria: #FFC2D1;
+    --cor-secundaria: #FF8FAB;
+    --cor-fundo: #F5F5F5;
+    --cor-texto: #2d7a56;
+    --cor-branco: #fff;
+    --cor-cinza: #ccc;
+    --cor-ativa: #FB6F92;
+
+    
+    --fonte-titulo: "Poppins", sans-serif;
+    --fonte-texto: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+}
+
+.cabecalho {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.cabecalho__logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo__imagem {
+    width: 190px;
+    padding-left: 15cm;
+}
+
+.logo__titulo {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 3.0rem;
+    font-variant: small-caps;
+    display: block;
+    padding-left: 5cm;
+}
+
+.cabecalho__menu {
+    width: 35px;
+    height: 35px;
+    background-image: url("imagens/menu.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background: #f8e0e7;
+    box-shadow: 2px 0px 8px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.menu.ativo {
+    left: 0;
+}
+
+.menu__conta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.conta__avatar {
+    width: 70px;
+}
+
+.conta__nome {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.menu__lista {
+    padding: 30px;
+    text-decoration: solid;
+    font-size: 8.0rem;
+}
+
+.menu__item {
+    padding: 0 10px;
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 5px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.menu__link:hover {
+    background: var(--cor-cinza);
+}
+
+.link__ativo {
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+.menu__divisor {
+    border: none;
+    border-bottom: 1px solid var(--cor-cinza);
+}
+
+main {
+    padding: 20px;
+}
+
+.conteudo__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.conteudo__texto {
+    margin: 10px 0;
+    line-height: 1.5;
+    font-size: 0.8cm;
+    margin-bottom: 10px;
+}
+
+.conteudo__lista {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 0.8cm;
+}
+
+.conteudo__botao {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 18px;
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.conteudo__botao:hover {
+    background: var(--cor-secundaria);
+}
+
+.carrossel {
+    margin-top: 40px;
+}
+
+.carrossel__titulo {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 10px;
+    font-size: 0.8cm;
+}
+
+.carrossel__container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+}
+
+.carrossel__imagem {
+    width: 80%;
+    padding-left: 55px;
+}
+
+.carrossel__botoes {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    user-select: none;
+    transition: 0.3s;
+    font-size: 0.8cm;
+}
+
+#botao-esquerdo {
+    left: -15px;
+}
+
+#botao-direito {
+    right: -15px;
+}
+
+.carrossel__botoes:hover {
+    background: var(--cor-secundaria);
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 8px;
+}
+
+.paginacao div {
+    width: 10px;
+    height: 10px;
+    background: var(--cor-cinza);
+    border-radius: 50%;
+}
+
+.paginacao .ativo {
+    background: var(--cor-primaria);
+}
+
+.rodape {
+    background: var(--cor-primaria);
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    color: var(--cor-branco);
+}
+
+.rodape__imagem {
+    width: 80px;
+}
+
+.rodape__texto {
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .cabecalho__menu {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-shadow: none;
+    }
+
+    .menu__lista {
+        display: flex;
+        gap: 20px;
+    }
+
+    .menu__item {
+        border: none;
+    }
+
+    .menu__divisor {
+        display: none;
+    }
+}
